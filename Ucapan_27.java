@@ -1,4 +1,3 @@
-import java.util.Scanner;
 public class Ucapan_27 {
     
     public static String PenerimaUcapan(){
