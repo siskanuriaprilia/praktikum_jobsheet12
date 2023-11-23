@@ -89,8 +89,7 @@ public class NilaiMahasiswa {
                 }
             }
         }
-
         System.out.println("\nMahasiswa dengan nilai tertinggi adalah " + mahasiswa[indeksMahasiswa] +
-                " dengan nilai " + nilaiTertinggi + " pada Minggu" + (indeksMinggu + 1));
+        " dengan nilai " + nilaiTertinggi + " pada Minggu" + (indeksMinggu + 1));
     }
 }
