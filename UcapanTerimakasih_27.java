@@ -14,7 +14,12 @@ public class UcapanTerimakasih_27 {
         System.out.println("Thank you "+nama+ " for being the best teacher in the world.\n" +
         "You inspired in me a love for learning and made me feel like i could ask you anyhting.");        
     }
+    public static void UcapanTambahan(String tambahan) {
+        System.out.println("Pesan Tambahan: " + tambahan);
+    
+    }
     public static void main(String[] args) {
         UcapanTerimakasih();
+        UcapanTambahan("our dedication to teaching is truly appreciated");
     }
 }
