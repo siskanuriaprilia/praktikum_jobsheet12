@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class NilaiMahasiswa {
     static int[][] nilai;
     static String[] mahasiswa;
-    static int minggu = 7;
+    static int minggu;
 
     public static void main(String[] args) {
         inputDataMahasiswa();
@@ -12,12 +12,15 @@ public class NilaiMahasiswa {
         tampilkanMahasiswaDenganNilaiTertinggi();
     }
 
-    // Fungsi untuk meninputkan data nilai mahasiswa
+    // Fungsi untuk menginputkan data nilai mahasiswa
     static void inputDataMahasiswa() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Masukkan jumlah mahasiswa: ");
         int jumlahMahasiswa = scanner.nextInt();
+
+        System.out.print("Masukkan jumlah minggu/tugas: ");
+        minggu = scanner.nextInt();
 
         nilai = new int[jumlahMahasiswa][minggu];
         mahasiswa = new String[jumlahMahasiswa];
@@ -26,8 +29,9 @@ public class NilaiMahasiswa {
             System.out.print("Masukkan nama mahasiswa: ");
             mahasiswa[i] = scanner.next();
 
-            System.out.println("Masukkan nilai untuk " + mahasiswa[i] + " pada Minggu 1 sampai 7:");
+            System.out.println("Masukkan nilai untuk " + mahasiswa[i] + " pada Minggu 1 sampai " + minggu + ":");
             for (int j = 0; j < minggu; j++) {
+                System.out.print("Masukkan nilai untuk Minggu " + (j + 1) + ": ");
                 nilai[i][j] = scanner.nextInt();
             }
         }
@@ -38,14 +42,14 @@ public class NilaiMahasiswa {
         System.out.println("\nMenampilkan seluruh nilai:");
         System.out.printf("%-10s", "Mahasiswa");
         for (int i = 0; i < minggu; i++) {
-            System.out.printf("%-7s", "Minggu " + (i + 1)+" ");
+            System.out.printf("%-10s", "Minggu " + (i + 1)+" ");
         }
         System.out.println();
 
         for (int i = 0; i < nilai.length; i++) {
-            System.out.printf("%-11s", mahasiswa[i]);
+            System.out.printf("%-10s", mahasiswa[i]);
             for (int j = 0; j < minggu; j++) {
-                System.out.printf("%-8d", nilai[i][j]);
+                System.out.printf("%-10d", nilai[i][j]);
             }
             System.out.println();
         }
@@ -71,7 +75,7 @@ public class NilaiMahasiswa {
             }
         }
 
-        System.out.println("\nMinggu terbaik adalah Minggu" + (mingguTerbaik + 1) + " dengan total nilai " + nilaiTertinggi);
+        System.out.println("\nMinggu terbaik adalah Minggu " + (mingguTerbaik + 1) + " dengan total nilai " + nilaiTertinggi);
     }
 
     // Fungsi untuk menampilkan mahasiswa yang memiliki nilai tertinggi
